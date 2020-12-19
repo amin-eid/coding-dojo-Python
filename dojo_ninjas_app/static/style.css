@@ -1,0 +1,10 @@
+.container{
+    display:flex;
+    justify-content: space-around;
+    background-color: aliceblue;
+}
+
+ul{
+    list-style-type: none;
+}
+
