@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books/Authors with templates  Django</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="frm">
+            <div style="text-align:right"><a href="/shows">Go Back</a></div>
+            <h3>Add a New Show</h3><br>
+            <form method="POST" action="/shows/add">{% csrf_token %}
+                Title:<input type="text"  name="title"><br><br>
+                Network:<input type="text"  name="network"><br><br>
+                Release Date:<input type="date"  name="date"><br><br>
+                Description:<input type="textarea" name="description"><br><br>
+                <input type="submit" value="Create">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
