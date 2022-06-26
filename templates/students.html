@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <td style="border:1px solid black;">First Name</td>
+            <td style="border:1px solid black;">Last Name</td>
+            <td style="border:1px solid black;">Age</td>
+            <td style="border:1px solid black;">Actions</td>
+         
+        </thead>
+        
+    <tbody >
+    {%for stu in students%}
+
+    <tr >
+        <td style="border:1px solid black;">{{stu.fname}}</td>
+        <td style="border:1px solid black;">{{stu.lname}}</td>
+        <td style="border:1px solid black;">{{stu.age}}</td>
+        <td style="border:1px solid black;"><a href="/{{stu.id}}">report card</a> | <a href="/edit/{{stu.id}}">add course grade</a></td>
+    </tr>
+
+    {%endfor%}
+    </tbody>
+    </table>
+</body>
+</html>

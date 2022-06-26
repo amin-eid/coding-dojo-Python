@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>{{student.fname}} {{student.lname}} report card!</h2>
+    <table>
+        <thead>
+            <td>Course</td>
+            <td>MARK</td>
+            <td>Comments</td>
+        </thead>
+        <tbody>
+        {%for grd in grades%} 
+        <tr>
+            <td>{{grd.course}}</td>
+            <td>{{grd.mark}}</td>
+            <td>{{grd.comment}}</td>
+        </tr>
+        {%endfor%}
+        </tbody>
+    </table>
+</body>
+</html>
