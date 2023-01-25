@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <form method="post" action="/addbook">{%csrf_token%}
+        <p><input type="text" name="title"></p>
+        <p><input type="submit" value="send form"></p>
+    </form>
+    {% if messages %}
+    <ul class="messages">    
+        {% for message in messages %}    
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <hr>
+    <table>
+        {%for bk in books%}
+        <tr><td>{{bk.id}}</td><td>{{bk.title}}</td><td><a href="/books/{{bk.id}}">view</a></td>
+        
+    </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>
